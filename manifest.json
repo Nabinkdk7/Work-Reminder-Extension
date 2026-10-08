@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Work Reminder",
+  "version": "1.1.0",
+  "description": "Personal workday reminder, alarm and voice notification system.",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "offline_enabled": true,
+  "host_permissions": [
+    "https://raw.githubusercontent.com/*"
+  ],
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications",
+    "offscreen",
+    "tts"
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

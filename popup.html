@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Work Reminder</title>
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <img class="logo" src="icons/icon48.png" alt="Work Reminder">
+    <div>
+      <h1>Work <span>Reminder</span></h1>
+      <p>Stay on track, get more done</p>
+    </div>
+  </div>
+  <div class="top-actions">
+    <button id="voiceToggle" class="icon-btn" title="Voice on/off">🔊</button>
+    <button id="settingsBtn" class="icon-btn" title="Settings">⚙️</button>
+  </div>
+</header>
+
+<main>
+  <!-- HOME -->
+  <section id="view-home" class="view active">
+    <div class="card next-card">
+      <div class="next-head">
+        <span>Next Reminder</span>
+        <span id="nextWhen" class="pill">🕐 Today</span>
+      </div>
+      <div id="nextTime" class="next-time">--:--</div>
+      <div id="nextTitleRow" class="next-title-row"><span class="cat-dot" id="nextDot"></span><h2 id="nextTitle">No upcoming reminders</h2></div>
+      <p id="nextMessage" class="next-message"></p>
+      <p id="nextFlags" class="next-flags"></p>
+    </div>
+
+    <div class="cat-grid" id="catGrid"></div>
+
+    <div class="card today-card">
+      <div class="today-head">
+        <h3>📅 Today's Schedule</h3>
+        <span id="todayCount" class="pill"></span>
+      </div>
+      <ul id="todayList" class="today-list"></ul>
+    </div>
+  </section>
+
+  <!-- REMINDERS -->
+  <section id="view-reminders" class="view">
+    <div class="row between">
+      <h2>All Reminders</h2>
+      <button id="addReminderBtn" class="btn primary">+ Add</button>
+    </div>
+    <div id="reminderList" class="reminder-list"></div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section id="view-schedule" class="view">
+    <h2>Schedule</h2>
+    <div class="card">
+      <h3>Office Hours</h3>
+      <div class="kv"><span>Office</span><b id="officeHours"></b></div>
+      <div class="kv"><span>Lunch</span><b id="officeLunch"></b></div>
+      <div class="kv"><span>Working days</span><b id="officeDays"></b></div>
+    </div>
+    <div class="card">
+      <h3>Suggested Workday</h3>
+      <p class="muted">Generate a smart schedule from your office hours.</p>
+      <button id="suggestBtn" class="btn primary">Create Workday Schedule</button>
+    </div>
+    <div class="card">
+      <h3>Today</h3>
+      <ul id="scheduleToday" class="today-list"></ul>
+    </div>
+  </section>
+
+  <!-- SETTINGS -->
+  <section id="view-settings" class="view">
+    <h2>Settings</h2>
+    <div class="card settings">
+      <h3>General</h3>
+      <label class="field"><span>Time format</span>
+        <select id="setHourFormat"><option value="12">12 hour</option><option value="24">24 hour</option></select>
+      </label>
+      <label class="field"><span>Default snooze (min)</span>
+        <select id="setSnooze"><option>5</option><option>10</option><option>15</option></select>
+      </label>
+      <label class="field"><span>Appearance</span>
+        <select id="setTheme"><option value="dark">Dark</option><option value="light">Light</option><option value="system">System</option></select>
+      </label>
+    </div>
+    <div class="card settings">
+      <h3>Notifications</h3>
+      <label class="field"><span>Enable notifications</span><input type="checkbox" id="setNotif"></label>
+      <label class="field"><span>Sound</span>
+        <select id="setSound"><option value="default">Default Chime</option><option value="sunrise">Sunrise</option><option value="melody">Melody</option><option value="pop">Pop</option><option value="zen">Zen</option><option value="sparkle">Sparkle</option><option value="glass">Glass</option><option value="gentle">Gentle</option><option value="digital">Digital</option><option value="cascade">Cascade</option><option value="soft">Soft</option><option value="bell">Bell</option><option value="alarm">Alarm</option></select>
+      </label>
+      <label class="field"><span>Sound volume</span><input type="range" id="setSoundVol" min="0" max="100"></label>
+      <button id="testSoundBtn" class="btn">Test Sound</button>
+    </div>
+    <div class="card settings">
+      <h3>Voice</h3>
+      <label class="field"><span>Enable voice</span><input type="checkbox" id="setVoice"></label>
+      <label class="field"><span>Language</span>
+        <select id="setLang"><option value="en">English</option><option value="ne">Nepali</option><option value="hi">Hindi</option></select>
+      </label>
+      <label class="field"><span>Voice type</span>
+        <select id="setGender"><option value="default">System Default</option><option value="male">Male</option><option value="female">Female</option></select>
+      </label>
+      <label class="field"><span>Speed</span>
+        <select id="setSpeed"><option value="slow">Slow</option><option value="normal">Normal</option><option value="fast">Fast</option></select>
+      </label>
+      <label class="field"><span>Voice volume</span><input type="range" id="setVoiceVol" min="0" max="100"></label>
+      <button id="testVoiceBtn" class="btn primary">Test Voice</button>
+    </div>
+    <div class="card settings">
+      <h3>Office</h3>
+      <label class="field"><span>Office start</span><input type="time" id="offStart"></label>
+      <label class="field"><span>Office end</span><input type="time" id="offEnd"></label>
+      <label class="field"><span>Lunch start</span><input type="time" id="offLunchStart"></label>
+      <label class="field"><span>Lunch end</span><input type="time" id="offLunchEnd"></label>
+      <div class="field"><span>Working days</span>
+        <div id="offDays" class="day-chips"></div>
+      </div>
+      <button id="saveOfficeBtn" class="btn primary">Save Office Hours</button>
+    </div>
+    <div class="card settings">
+      <h3>Updates</h3>
+      <div class="kv"><span>Installed version</span><b id="updCurrent">—</b></div>
+      <div class="kv"><span>Last checked</span><b id="updChecked">Never</b></div>
+      <p id="updStatus" class="muted"></p>
+      <div id="updPanel" class="upd-panel hidden">
+        <div class="kv"><span>New version</span><b id="updLatest">—</b></div>
+        <p id="updNotes" class="muted"></p>
+        <div class="btn-row start">
+          <button id="updDownloadBtn" class="btn primary">Download Update</button>
+        </div>
+        <ol class="upd-steps">
+          <li>Click <b>Download Update</b> to get the latest ZIP from GitHub.</li>
+          <li>Extract it <b>over your current extension folder</b> (or extract fresh and note the folder).</li>
+          <li>Optional: use <b>Verify extension folder</b> below to confirm the folder and its version.</li>
+          <li>Open <b>chrome://extensions</b> and press <b>Reload</b> on Work Reminder.</li>
+        </ol>
+        <div class="btn-row start">
+          <button id="updFolderBtn" class="btn">Verify extension folder</button>
+        </div>
+        <p id="updFolderStatus" class="muted"></p>
+      </div>
+      <div class="btn-row start">
+        <button id="updCheckBtn" class="btn primary">Check for Updates</button>
+      </div>
+    </div>
+    <div class="card settings about">
+      <div class="about-links">
+        <a href="#" id="repoLink">GitHub Repository</a>
+        <span class="dot-sep">•</span>
+        <span>Dev by <a href="#" id="devLink">Nabin Khadka</a></span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<nav class="tabbar">
+  <button class="tab active" data-view="home">🏠<span>Home</span></button>
+  <button class="tab" data-view="reminders">🔔<span>Reminders</span></button>
+  <button class="tab" data-view="schedule">📅<span>Schedule</span></button>
+  <button class="tab" data-view="settings">⚙️<span>Settings</span></button>
+</nav>
+
+<!-- Reminder form modal -->
+<div id="modal" class="modal hidden">
+  <div class="modal-card">
+    <h3 id="modalTitle">Add Reminder</h3>
+    <input type="hidden" id="fId">
+    <label class="field"><span>Time</span><input type="time" id="fTime"></label>
+    <label class="field"><span>Title</span><input type="text" id="fTitle" placeholder="Return Cup"></label>
+    <label class="field"><span>Message</span><textarea id="fMessage" rows="2" placeholder="Please return your cup to the kitchen."></textarea></label>
+    <label class="field"><span>Category</span>
+      <select id="fCategory"><option value="work">Work</option><option value="break">Break</option><option value="meeting">Meeting</option><option value="personal">Personal</option><option value="custom">Custom</option></select>
+    </label>
+    <label class="field"><span>Repeat</span>
+      <select id="fRepeat"><option value="once">Once</option><option value="daily">Every day</option><option value="weekdays">Weekdays</option><option value="custom">Custom days</option></select>
+    </label>
+    <div class="field" id="fDaysWrap"><span>Days</span><div id="fDays" class="day-chips"></div></div>
+    <label class="field"><span>Sound</span>
+      <select id="fSound"><option value="default">Default Chime</option><option value="sunrise">Sunrise</option><option value="melody">Melody</option><option value="pop">Pop</option><option value="zen">Zen</option><option value="sparkle">Sparkle</option><option value="glass">Glass</option><option value="gentle">Gentle</option><option value="digital">Digital</option><option value="cascade">Cascade</option><option value="soft">Soft</option><option value="bell">Bell</option><option value="alarm">Alarm</option><option value="none">None</option></select>
+    </label>
+    <label class="field"><span>Voice</span><input type="checkbox" id="fVoice" checked></label>
+    <label class="field"><span>Notification</span><input type="checkbox" id="fNotif" checked></label>
+    <div class="btn-row">
+      <button id="fCancel" class="btn">Cancel</button>
+      <button id="fSave" class="btn primary">Save Reminder</button>
+    </div>
+  </div>
+</div>
+
+<!-- Suggestions modal -->
+<div id="suggestModal" class="modal hidden">
+  <div class="modal-card">
+    <h3>Suggested Schedule</h3>
+    <ul id="suggestList" class="today-list"></ul>
+    <div class="btn-row">
+      <button id="suggestCancel" class="btn">Cancel</button>
+      <button id="suggestCustomize" class="btn">Customize</button>
+      <button id="suggestAdd" class="btn primary">Add All</button>
+    </div>
+  </div>
+</div>
+
+<script src="shared.js"></script>
+<script src="popup.js"></script>
+</body>
+</html>
