@@ -1,9 +1,0 @@
-# OS / editor junk
-.DS_Store
-Thumbs.db
-desktop.ini
-
-# Local dev artifacts (never published)
-*.zip
-tmp_*.js
-*.log
