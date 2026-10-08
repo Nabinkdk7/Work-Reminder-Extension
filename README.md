@@ -6,17 +6,17 @@ Dev by [Nabin Khadka](https://nabinkhadka.com)
 
 ## What's inside
 
-- **`work-reminder-v1.3.0.zip`** — the complete, ready-to-install extension.
+- **`work-reminder-v1.3.1.zip`** — the complete, ready-to-install extension.
 - **`README.md`** — this guide.
 
 ## Download
 
-- **Latest version:** download `work-reminder-v1.3.0.zip` from this page (**Code → Download** won't work for single files — click the ZIP file, then **Download**), or get it from the [**Releases**](https://github.com/Nabinkdk7/Work-Reminder-Extension/releases) page.
+- **Latest version:** download `work-reminder-v1.3.1.zip` from this page (**Code → Download** won't work for single files — click the ZIP file, then **Download**), or get it from the [**Releases**](https://github.com/Nabinkdk7/Work-Reminder-Extension/releases) page.
 - After a new release is published, the extension notifies you automatically and offers a one-click download from **Settings → Updates**.
 
 ## Install
 
-1. Extract `work-reminder-v1.3.0.zip` to a permanent folder (e.g. `Documents\WorkReminder`). Keep this folder — the browser loads the extension from it.
+1. Extract `work-reminder-v1.3.1.zip` to a permanent folder (e.g. `Documents\WorkReminder`). Keep this folder — the browser loads the extension from it.
 2. Open `chrome://extensions` in your browser.
 3. Enable **Developer mode** (toggle, top right).
 4. Click **Load unpacked** and select the extracted folder (the one containing `manifest.json`).
