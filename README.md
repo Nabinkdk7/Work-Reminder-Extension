@@ -29,16 +29,6 @@ Dev by [Nabin Khadka](https://nabinkhadka.com)
 - **Schedule** — office hours overview plus a one-click smart workday generator (always asks before adding anything).
 - **Settings** — time format, snooze, notification sound (13 options) and volume, voice (male/female, English/Nepali/Hindi, speed, volume, Test Voice), office hours, appearance (dark/light/system), and automatic update checks.
 
-The default schedule rings every day with a notification, an alarm sound, and a spoken message:
-
-| Time | Reminder |
-| ---- | -------- |
-| 8:10 AM | Check in on the Rigo App |
-| 9:30 AM | Snack break |
-| 11:55 AM | Take your cup to the kitchen floor |
-| 12:00 PM | Lunchtime — stop time tracking in ClickUp |
-| 5:00 PM | Check out on the Rigo App — office hours over |
-
 Reminders fire even when the popup is closed and survive browser restarts.
 
 ## Updating
