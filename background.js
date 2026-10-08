@@ -159,7 +159,7 @@ function playSound(name, volume) {
 /* ---------------- update checker ---------------- */
 
 const UPDATE_OWNER = "Nabinkdk7";
-const UPDATE_REPO = "work-reminder-extension";
+const UPDATE_REPO = "Work-Reminder-Extension";
 const UPDATE_URL = "https://raw.githubusercontent.com/" + UPDATE_OWNER + "/" + UPDATE_REPO + "/main/updates.json";
 const REPO_URL = "https://github.com/" + UPDATE_OWNER + "/" + UPDATE_REPO;
 const UPDATE_CHECK_ALARM = "wr-update-check";

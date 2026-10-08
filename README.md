@@ -2,7 +2,7 @@
 
 A premium personal workday reminder, alarm, schedule and voice notification browser extension (Manifest V3).
 
-Dev by [Nabin Khadka](https://nabinkhadka.com) · [GitHub Repository](https://github.com/Nabinkdk7/work-reminder-extension)
+Dev by [Nabin Khadka](https://nabinkhadka.com) · [GitHub Repository](https://github.com/Nabinkdk7/Work-Reminder-Extension)
 
 ## Features
 
@@ -17,7 +17,7 @@ Dev by [Nabin Khadka](https://nabinkhadka.com) · [GitHub Repository](https://gi
 
 ## Install (from ZIP)
 
-1. Download the repository ZIP: **Code → Download ZIP** (or grab a specific release ZIP from the [releases page](https://github.com/Nabinkdk7/work-reminder-extension/releases)).
+1. Download the repository ZIP: **Code → Download ZIP** (or grab a specific release ZIP from the [releases page](https://github.com/Nabinkdk7/Work-Reminder-Extension/releases)).
 2. Extract the ZIP anywhere (e.g. `Documents\WorkReminder`).
 3. Open `chrome://extensions` in Chrome/Edge/Brave.
 4. Enable **Developer mode** (top right).
