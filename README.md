@@ -6,17 +6,17 @@ Dev by [Nabin Khadka](https://nabinkhadka.com)
 
 ## What's inside
 
-- **`work-reminder-v1.3.1.zip`** — the complete, ready-to-install extension.
+- **`work-reminder-v1.4.0.zip`** — the complete, ready-to-install extension.
 - **`README.md`** — this guide.
 
 ## Download
 
-- **Latest version:** download `work-reminder-v1.3.1.zip` from this page (**Code → Download** won't work for single files — click the ZIP file, then **Download**), or get it from the [**Releases**](https://github.com/Nabinkdk7/Work-Reminder-Extension/releases) page.
+- **Latest version:** download `work-reminder-v1.4.0.zip` from this page (**Code → Download** won't work for single files — click the ZIP file, then **Download**), or get it from the [**Releases**](https://github.com/Nabinkdk7/Work-Reminder-Extension/releases) page.
 - After a new release is published, the extension notifies you automatically and offers a one-click download from **Settings → Updates**.
 
 ## Install
 
-1. Extract `work-reminder-v1.3.1.zip` to a permanent folder (e.g. `Documents\WorkReminder`). Keep this folder — the browser loads the extension from it.
+1. Extract `work-reminder-v1.4.0.zip` to a permanent folder (e.g. `Documents\WorkReminder`). Keep this folder — the browser loads the extension from it.
 2. Open `chrome://extensions` in your browser.
 3. Enable **Developer mode** (toggle, top right).
 4. Click **Load unpacked** and select the extracted folder (the one containing `manifest.json`).
@@ -27,7 +27,14 @@ Dev by [Nabin Khadka](https://nabinkhadka.com)
 - **Home** — your next reminder, category cards (Work, Breaks, Meetings, Personal) and Today's Schedule.
 - **Reminders** — add, edit, delete, enable/disable. Each reminder has its own time, message, category, repeat rule, sound, and voice/notification switches.
 - **Schedule** — office hours overview plus a one-click smart workday generator (always asks before adding anything).
-- **Settings** — time format, snooze, notification sound (13 options) and volume, voice (male/female, English/Nepali/Hindi, speed, volume, Test Voice), office hours, appearance (dark/light/system), and automatic update checks.
+- **Settings** — time format, snooze, notification sound (13 options) and volume, voice (male/female, English/Nepali/Hindi, speed, volume, Test Voice), ClickUp integration, office hours, appearance (dark/light/system), and automatic update checks.
+
+## ClickUp integration (optional)
+
+1. In ClickUp, open your avatar → **Apps → API token** → Generate and copy your personal token.
+2. In the extension, go to **Settings → ClickUp Integration**, enable it, paste the token, and press **Connect**.
+3. Choose a check interval (1–15 minutes) and which events announce: task assigned to you, status changes, completions, and time logged on your tasks.
+4. When activity happens you'll get a notification plus a brief spoken summary (e.g. *"New ClickUp task assigned to you: Fix login bug."*). Use **Check now** to poll immediately.
 
 Reminders fire even when the popup is closed and survive browser restarts.
 
