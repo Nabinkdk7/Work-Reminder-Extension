@@ -6,18 +6,24 @@ Dev by [Nabin Khadka](https://nabinkhadka.com) · [GitHub Repository](https://gi
 
 ## What's inside
 
-- **`work-reminder-v1.8.0.zip`** — the complete, ready-to-install extension.
+- **`work-reminder-v1.9.0.zip`** — the complete, ready-to-install extension.
 - **`README.md`** — this guide.
 
 ## Download
 
-- **Latest version:** open [`work-reminder-v1.8.0.zip`](https://github.com/Nabinkdk7/Work-Reminder-Extension/blob/main/work-reminder-v1.8.0.zip) and click **Download**.
+- **Latest version:** open [`work-reminder-v1.9.0.zip`](https://github.com/Nabinkdk7/Work-Reminder-Extension/blob/main/work-reminder-v1.9.0.zip) and click **Download**.
 - Do **not** use the green **Code → Download ZIP** button: that downloads the repository (the extension ZIP plus this README), not the extension folder.
 - The extension checks this repository automatically and shows a notification plus a one-click download in **Settings → Updates** when a newer ZIP is published.
 
+## What's new in 1.9.0
+
+- **Fuller default chime** — three soft, rich bell strikes that ring for about three seconds instead of a short, thin beep.
+- **More reliable in daily use** — serialized storage saves, self-healing alarms, safer Do Not Disturb resume and a confirmation step before restoring a backup.
+- **Smaller fixes** — one update notification per version, approved GitHub download links only, and a popup that fits Chrome's 600 px limit.
+
 ## Install
 
-1. Download and extract `work-reminder-v1.8.0.zip` to a permanent folder (e.g. `Documents\WorkReminder`). Keep this folder — the browser loads the extension from it.
+1. Download and extract `work-reminder-v1.9.0.zip` to a permanent folder (e.g. `Documents\WorkReminder`). Keep this folder — the browser loads the extension from it.
 2. Open `chrome://extensions`.
 3. Enable **Developer mode** (top right).
 4. Click **Load unpacked** and select the extracted folder (the one containing `manifest.json`).
@@ -32,7 +38,7 @@ Dev by [Nabin Khadka](https://nabinkhadka.com) · [GitHub Repository](https://gi
 - **Time & Focus** — a live local clock with timezone, screen time today, a workday countdown to the end of your office hours, and a persistent stopwatch with lap times.
 - **Real alarm engine** — `chrome.alarms` plus a background service worker; reminders fire even when the popup is closed. Alarms are reconciled on install, startup and every worker wake-up, while active snoozes, Done state and pending one-offs survive Chrome recycling the worker.
 - **Notifications** — `chrome.notifications` with **Done** and **Snooze** buttons that keep working after a worker restart. A laptop waking from sleep never replays a stale daily alarm.
-- **Polished sounds** — 13 WebAudio-generated alarm sounds (Default Chime, Sunrise, Melody, Pop, Zen, Sparkle, Glass, Gentle, Digital, Cascade, Soft, Bell, Alarm) through a peak limiter, with a sub-octave body and warm harmonics. No audio asset files needed.
+- **Polished sounds** — 13 WebAudio-generated alarm sounds (Default Chime, Sunrise, Melody, Pop, Zen, Sparkle, Glass, Gentle, Digital, Cascade, Soft, Bell, Alarm) through a peak limiter, with a sub-octave body and warm harmonics. The default chime rings for about three seconds. No audio asset files needed.
 - **Real voice reminders** — `chrome.tts` first with a Web Speech API fallback; male/female/system voice, English/Nepali/Hindi, slow/normal/fast speed, volume and a **Test Voice** button.
 - **Smart scheduling** — once, daily, weekdays or custom days; 5/10/15-minute or custom snooze; enable/disable, duplicate, search, edit and delete.
 - **Office hours** plus a one-click **Create Workday Schedule** generator (always asks before adding anything).
